@@ -2,6 +2,9 @@
   <div id="app">
     <div class="urna">
       
+      <Tela
+      :tela= "tela"
+      />
       <Teclado/>
 
     </div>
@@ -13,12 +16,19 @@
 import '@/css/global.css';
 
 import Teclado from '@/components/teclado.vue';
+import Tela from '@/components/tela.vue';
 
 export default {
   name: 'App',
   components: {
-    Teclado
+    Teclado,
+    Tela
     
+  },
+  data() {
+    return {
+      tela: 'prefeito'
+    }
   }
 }
 </script>
@@ -32,6 +42,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .urna {
