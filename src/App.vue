@@ -46,11 +46,12 @@ export default {
 }
 
 .urna {
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   background-color: var(--bg-box);
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   display: flex;
+  gap: 15px;
 }
 </style>
