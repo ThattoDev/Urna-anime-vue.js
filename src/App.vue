@@ -4,6 +4,8 @@
       
       <Tela
       :tela= "tela"
+      :numeroVoto= "numeroVoto"
+      :quantidadeNumeros= "quantidadeNumeros"
       />
       <Teclado/>
 
@@ -27,7 +29,58 @@ export default {
   },
   data() {
     return {
-      tela: 'prefeito'
+      tela: 'prefeito',
+      numeroVoto: '',
+      quantidadeNumeros: 2,
+      candidato:{},
+      candidatos: {
+        "prefeito": {
+          "11":{
+            "nome": "Toji",
+            "partido": "Jujutsu",
+            "imagem": ''
+          },
+           "17":{
+            "nome": "Maki",
+            "partido": "Jujutsu0",
+            "imagem": ''
+          },
+           "21":{
+            "nome": "Naruto",
+            "partido": "Konoha",
+            "imagem": ''
+          },
+           "71":{
+            "nome": "Gojo",
+            "partido": "JujutsuFilme",
+            "imagem": ''
+          }
+        },
+        
+        "vereador": {
+           "111":{
+            "nome": "Levi",
+            "partido": "Shingeki",
+            "imagem": ''
+          },
+           "171":{
+            "nome": "Sasuke",
+            "partido": "Konoha",
+            "imagem": ''
+          },
+           "222":{
+            "nome": "Nobara",
+            "partido": "Jujutsu",
+            "imagem": ''
+          },
+           "157":{
+            "nome": "Sukuna",
+            "partido": "Jujutsu0",
+            "imagem": ''
+          }
+
+        }
+      }
     }
   }
 }
@@ -52,6 +105,6 @@ export default {
   padding: 20px;
   border-radius: 10px;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 </style>

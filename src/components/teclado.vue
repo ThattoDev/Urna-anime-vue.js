@@ -83,22 +83,26 @@ export default {
 
     .teclado-acoes button {
         color: var(--cor-texto-escuro);
-        font-size: 18px;
         border-radius: 5px;
         width: 32%;
         height: 50px;
+        font-weight: bold;
     }
 
     .btn-branco {
         background-color: var(--botao-branco);
+        font-size: 90%;
     }
 
     .btn-corrige {
         background-color: var(--botao-corrige);
+        font-size: 95%;
     }
 
     .btn-confirma {
         background-color: var(--botao-confirma);
+        font-size: 90%;
+        padding-right: 25px;
     }
 
 </style>
