@@ -3,28 +3,28 @@
 
         <div class="teclado-nemerico">
             <div class="urna-numero-linha">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
+                <button v-on:click="adicionarNumero(1)">1</button>
+                <button v-on:click="adicionarNumero(2)">2</button>
+                <button v-on:click="adicionarNumero(3)">3</button>
             </div>
             <div class="urna-numero-linha">
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
+                <button v-on:click="adicionarNumero(4)">4</button>
+                <button v-on:click="adicionarNumero(5)">5</button>
+                <button v-on:click="adicionarNumero(6)">6</button>
             </div>
             <div class="urna-numero-linha">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
+                <button v-on:click="adicionarNumero(7)">7</button>
+                <button v-on:click="adicionarNumero(8)">8</button>
+                <button v-on:click="adicionarNumero(9)">9</button>
             </div>
             <div class="urna-numero-linha">
-                <button>0</button>
+                <button v-on:click="adicionarNumero(0)">0</button>
             </div>
         </div>
 
         <div class="teclado-acoes">
-            <button class="btn-branco">BRANCO</button>
-            <button class="btn-corrige">CORRIGE</button>
+            <button class="btn-branco" v-on:click="branco()">BRANCO</button>
+            <button class="btn-corrige" v-on:click="corrigir()" >CORRIGE</button>
             <button class="btn-confirma">CONFIRMA</button>
 
         </div>
@@ -39,7 +39,12 @@ import '@/css/global.css';
 
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Teclado'
+    name: 'Teclado',
+    props: {
+        adicionarNumero: Function,
+        corrigir: Function,
+        branco: Function
+    }
 }
 
 </script>

@@ -6,14 +6,23 @@
                 <div class="urna-tela-voto-tipo"> {{tela}}</div>
                 <div class="urna-tela-voto-numeros">
 
-                    <div class="urna-tela-voto-numero" v-for="{value,key} in numeroVoto.padEnd(quantidadeNumeros,' ')" :key="key">
+                    <div class="urna-tela-voto-numero" v-for="(value,key)
+                    in numeroVoto.padEnd(quantidadeNumeros,' ')" :key="key">
                         {{value}}
                     </div>
 
                 </div>
-            </div>
-            <div class="urna-tela-voto-imgs">
 
+                <div class="urna-tela-voto-descricao">
+                    Nome: <strong> {{candidato.nome ? candidato.nome : '___________' }} </strong>
+                </div>
+                <div class="urna-tela-voto-descricao">
+                    Partido: <strong> {{candidato.partido ? candidato.partido : '___________' }} </strong>
+                </div>
+
+            </div>
+            <div v-if="candidato.imagem" class="urna-tela-voto-imgs">
+                <img src="candidato.imagem">
             </div>
             <div class="urna-tela-voto-instrucoes">
 
@@ -34,8 +43,8 @@ export default {
     props:{
         tela: String,
         numeroVoto: String,
-        quantidadeNumeros: Number
-
+        quantidadeNumeros: Number,
+        candidato: Object
     }
 }
 </script>
@@ -65,19 +74,23 @@ export default {
 
     .urna-tela-voto-numeros {
         display: flex;
+        align-items: center;
+        color: var(--cor-texto-escuro);
     }
 
     .urna-tela-voto-numero {
         width: 45px;
         height: 55px;
-        color: red;
         border: 1px solid var(--borda-escura);
-        align-items: center;
         margin-left: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 30px;
+    }
+
+    .urna-tela-voto-descricao {
+        margin-top: 20px;
     }
 
 

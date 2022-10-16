@@ -6,8 +6,13 @@
       :tela= "tela"
       :numeroVoto= "numeroVoto"
       :quantidadeNumeros= "quantidadeNumeros"
+      :candidato= "candidato"
       />
-      <Teclado/>
+      <Teclado
+      :adicionarNumero="adicionarNumero"
+      :corrigir="corrigir"
+      :branco="branco"
+      />
 
     </div>
   </div>
@@ -25,7 +30,53 @@ export default {
   components: {
     Teclado,
     Tela
+  },
+  methods: {
+    adicionarNumero(numero) {
+      if(this.numeroVoto.length == this.quantidadeNumeros)
+      return false
+
+      this.numeroVoto += ''+numero;
     
+      this.verificarCandidato();
+    },
+
+    verificarCandidato() {
+      if(this.numeroVoto.length < this.quantidadeNumeros)
+      return false
+
+      if(this.candidatos[this.tela][this.numeroVoto]) {
+        this.candidato = this.candidatos[this.tela][this.numeroVoto];
+        return true
+      }
+      
+      this.candidato = {
+        nome: 'voto nulo',
+        partido: 'voto nulo',
+        imagem: ''
+      }
+
+    },
+
+    limpar() {
+      this.candidato = {}
+      this.numeroVoto = ''
+    },
+
+    corrigir() {
+      this.limpar();
+    },
+
+
+    branco(){
+      this.candidato= {nome: 'voto em branco',
+      partido: 'voto em branco',
+      imagem: ''}
+    },
+
+    confirma() {
+
+    }
   },
   data() {
     return {
@@ -56,7 +107,7 @@ export default {
             "imagem": ''
           }
         },
-        
+
         "vereador": {
            "111":{
             "nome": "Levi",
