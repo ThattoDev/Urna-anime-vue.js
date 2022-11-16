@@ -12,6 +12,7 @@
       :adicionarNumero="adicionarNumero"
       :corrigir="corrigir"
       :branco="branco"
+      :confirma="confirma"
       />
 
     </div>
@@ -75,7 +76,8 @@ export default {
     },
 
     confirma() {
-
+      this.limpar();
+      this.Tela = 'vereador';
     }
   },
   data() {
