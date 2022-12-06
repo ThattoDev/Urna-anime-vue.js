@@ -77,7 +77,7 @@ export default {
 
     confirma() {
       this.limpar();
-      this.Tela = 'vereador';
+      this.tela = 'prefeito';
     }
   },
   data() {
