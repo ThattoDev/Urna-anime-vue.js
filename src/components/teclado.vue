@@ -43,7 +43,8 @@ export default {
     props: {
         adicionarNumero: Function,
         corrigir: Function,
-        branco: Function
+        branco: Function,
+        confirma: Function
     }
 }
 

@@ -22,7 +22,7 @@
 
             </div>
             <div v-if="candidato.imagem" class="urna-tela-voto-imgs">
-                <img src="candidato.imagem">
+                <img :src="candidato.imagem">
             </div>
             <div class="urna-tela-voto-instrucoes">
 

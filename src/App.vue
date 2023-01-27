@@ -70,14 +70,15 @@ export default {
 
 
     branco(){
+      this.limpar();
       this.candidato= {nome: 'voto em branco',
       partido: 'voto em branco',
       imagem: ''}
     },
 
-    confirma() {
+    confirma(){
       this.limpar();
-      this.tela = 'prefeito';
+      this.tela = 'vereador';
     }
   },
   data() {
@@ -88,17 +89,17 @@ export default {
       candidato:{},
       candidatos: {
         "prefeito": {
-          "11":{
+          "21":{
             "nome": "Toji",
             "partido": "Jujutsu",
-            "imagem": ''
+            "imagem": './assets/images/Maki-prefeita.jpg'
           },
-           "17":{
+           "27":{
             "nome": "Maki",
             "partido": "Jujutsu0",
-            "imagem": ''
+            "imagem": <img src="./assets/images/Maki-prefeita.jpg"/>
           },
-           "21":{
+           "23":{
             "nome": "Naruto",
             "partido": "Konoha",
             "imagem": ''
